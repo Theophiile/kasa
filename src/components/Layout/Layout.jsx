@@ -1,16 +1,18 @@
 import { Outlet } from 'react-router-dom'
-import Header from '../Header/Header'  // Chemin relatif corrigé
-import Footer from '../Footer/Footer'  // Chemin relatif corrigé
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 import './Layout.scss'
 
-export default function Layout() {
+function Layout() {
   return (
     <div className="layout">
       <Header />
-      <main>
-        <Outlet />
+      <main className="main-content">
+        <Outlet /> {/* Ceci affichera le contenu des routes enfants */}
       </main>
       <Footer />
     </div>
   )
 }
+
+export default Layout

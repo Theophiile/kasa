@@ -1,4 +1,4 @@
-import './Footer.scss'
+import './Footer.scss';
 
 export default function Footer() {
   return (
@@ -8,7 +8,9 @@ export default function Footer() {
         alt="Kasa"
         className="footer-logo"
       />
-      {/* ... */}
+      <p className="footer-copyright">
+        © 2020 Kasa. All rights reserved
+      </p>
     </footer>
-  )
+  );
 }
