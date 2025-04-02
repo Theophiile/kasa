@@ -1,4 +1,3 @@
-// pages/About.jsx
 import Collapse from "../../components/Collapse/Collapse";
 import aboutData from '../../data/about.json'; 
 import '../About/About.scss';
