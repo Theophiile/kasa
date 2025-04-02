@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .error-page {
   display: flex;
   flex-direction: column;
@@ -37,7 +39,7 @@
       transition: color 0.3s;
 
       &:hover {
-        color: darken(#ff6060, 10%);
+        color: color.adjust(#ff6060, $lightness: -10%);
       }
     }
   }

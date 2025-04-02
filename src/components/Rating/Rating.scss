@@ -1,0 +1,24 @@
+.rating {
+    display: flex;
+    align-items: center;
+  
+    &-star {
+      object-fit: contain;
+      transition: transform 0.2s ease;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .rating {
+      gap: 4px; 
+  
+      &-star {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }

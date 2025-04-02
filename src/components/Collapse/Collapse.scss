@@ -1,69 +1,49 @@
 .collapse {
-  width: 80%;
-  max-width: 1024px;
-  margin: 0 auto 20px;
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: #ff6060;
+  width: 100%;
+  margin-bottom: 20px;
 
   &-header {
-    background-color: transparent;
-    padding: 10px 20px;
+    background: $primary-color;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-
+    
     h3 {
       margin: 0;
-      font-weight: 700;
-      color: white;
+      font-size: 18px;
+      font-weight: 500;
     }
   }
 
-  .arrow-icon {
+  &-icon {
     transition: transform 0.3s ease;
-    color: white;
-    font-size: 1.2rem;
-  
   }
 
+  &.open {
+    .collapse-header {
+      border-radius: 5px 5px 0 0;
+    }
+    
+    .collapse-icon {
+      transform: rotate(180deg);
+    }
+  }
 
   &-content {
-    background-color: #f6f6f6;
-    color: #000;
+    display: none;
+    background: #f6f6f6;
+    border-radius: 0 0 5px 5px;
     padding: 20px;
-    font-size: 16px;
-    line-height: 1.5;
+    color: #000000;
   }
-}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .collapse {
-    width: 90%;
-    
-    &-header {
-      padding: 8px 15px;
-      
-      h3 {
-        font-size: 16px;
-      }
-    }
-    
-    &-content {
-      padding: 15px;
-      font-size: 14px;
+  &.open {
+    .collapse-content {
+      display: block;
     }
   }
 }
