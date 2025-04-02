@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import Banner from './Banner/Banner'
-import Card from './Card/Card'
+import Banner from '../../components/Banner/Banner'
+import Card from '../../components/Card/Card'
 import './Home.scss'
 
 export default function Home() {
