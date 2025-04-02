@@ -8,8 +8,8 @@ const Collapse = ({ title, children }) => {
     <div className={`collapse ${isOpen ? 'open' : ''}`}>
       <div className="collapse-header" onClick={() => setIsOpen(!isOpen)}>
         <h3>{title}</h3>
-        <span className="collapse-icon">
-          <i className={`fas fa-chevron-${isOpen ? 'up' : 'down'}`}></i>
+        <span className={`collapse-icon ${isOpen ? 'open' : ''}`}>
+          <i className="fas fa-chevron-down"></i>
         </span>
       </div>
       {isOpen && (

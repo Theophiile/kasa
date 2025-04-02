@@ -20,29 +20,28 @@
   }
 
   &-icon {
+    transform: rotate(180deg); // Initial state (fermé)
     transition: transform 0.3s ease;
+    
+    &.open {
+      transform: rotate(0deg); // État ouvert
+    }
   }
 
   &.open {
     .collapse-header {
       border-radius: 5px 5px 0 0;
     }
-    
-    .collapse-icon {
-      transform: rotate(180deg);
-    }
   }
 
   &-content {
-    display: none;
     background: #f6f6f6;
     border-radius: 0 0 5px 5px;
     padding: 20px;
     color: #000000;
-  }
-
-  &.open {
-    .collapse-content {
+    display: none;
+    
+    .collapse.open & {
       display: block;
     }
   }
