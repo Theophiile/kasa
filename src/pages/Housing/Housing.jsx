@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import logements from '../../data/logements.json';
 import Slideshow from '../../components/Slideshow/Slideshow';
 import Collapse from '../../components/Collapse/Collapse';
@@ -9,8 +9,12 @@ const Housing = () => {
   const { id } = useParams();
   const housing = logements.find(item => item.id === id);
 
+  // Redirection vers la page d'erreur si logement non trouvé
   if (!housing) {
-    return <div>Logement non trouvé</div>;
+    return <Navigate to="/error" state={{ 
+      message: `Le logement (ID: ${id}) n'existe pas`,
+      type: '404'
+    }} replace />;
   }
 
   return (
@@ -32,23 +36,21 @@ const Housing = () => {
         <div className="housing-host">
           <div className="host-info">
             <p>{housing.host.name.split(' ')[0]}<br/>{housing.host.name.split(' ')[1]}</p>
-            <img src={housing.host.picture} alt={housing.host.name} />
+            <img 
+              src={housing.host.picture} 
+              alt={`Photo de ${housing.host.name}`} 
+              loading="lazy"
+            />
           </div>
           <Rating score={parseInt(housing.rating)} />
         </div>
       </div>
 
       <div className="housing-details">
-        <Collapse 
-          title="Description"
-          className="housing-collapse"
-        >
+        <Collapse title="Description">
           <p>{housing.description}</p>
         </Collapse>
-        <Collapse 
-          title="Équipements"
-          className="housing-collapse"
-        >
+        <Collapse title="Équipements">
           <ul>
             {housing.equipments.map((item, index) => (
               <li key={index}>{item}</li>
