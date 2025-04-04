@@ -1,10 +1,10 @@
-// Home.scss
 @use "@/styles/_variables" as *;
 
 .home {
   max-width: $max-width;
   margin: 0 auto;
   padding: 0 100px;
+  box-sizing: border-box;
 
   .gallery {
     display: grid;
@@ -16,7 +16,7 @@
     margin-bottom: 50px;
 
     @media (min-width: 1200px) {
-      grid-template-columns: repeat(3, 1fr); // 3 colonnes sur grands écrans
+      grid-template-columns: repeat(3, 1fr); 
     }
   }
 }

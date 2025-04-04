@@ -7,7 +7,6 @@ export default function Home() {
   const [logements, setLogements] = useState([])
 
   useEffect(() => {
-    // Simuler un chargement de données
     import('../../data/logements.json')
       .then(data => setLogements(data.default))
       .catch(err => console.error('Erreur de chargement:', err))

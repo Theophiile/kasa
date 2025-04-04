@@ -12,3 +12,9 @@
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .layout {
+    min-height: auto;
+  }
+}
