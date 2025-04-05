@@ -1,4 +1,4 @@
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, Navigate, useNavigate } from 'react-router-dom';
 import logements from '../../data/logements.json';
 import Slideshow from '../../components/Slideshow/Slideshow';
 import Collapse from '../../components/Collapse/Collapse';
@@ -7,14 +7,15 @@ import './Housing.scss';
 
 const Housing = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const housing = logements.find(item => item.id === id);
 
   // Redirection vers la page d'erreur si logement non trouvé
   if (!housing) {
-    return <Navigate to="/error" state={{ 
-      message: `Le logement (ID: ${id}) n'existe pas`,
-      type: '404'
-    }} replace />;
+    return <Navigate to="/404" replace state={{
+      resourceType: 'housing',
+      invalidId: id
+    }} />;
   }
 
   return (

@@ -16,9 +16,14 @@ export default function AppRouter() {
           element={<Housing />}
           errorElement={<Error />} 
         />
-        {/* Gestion des routes inexistantes */}
-        <Route path="/error" element={<Error />} />
-        <Route path="*" element={<Navigate to="/error" replace state={{ errorType: '404' }} />} />
+      {/* Nouvelle route 404 explicite */}
+    <Route path="/404" element={<Error />} />
+        
+        {/* Redirection des routes inexistantes */}
+        <Route path="*" element={<Navigate to="/404" replace state={{ 
+          errorType: '404',
+          attemptedPath: window.location.pathname 
+        }} />} />
       </Route>
     </Routes>
   );
