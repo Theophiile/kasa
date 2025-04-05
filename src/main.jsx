@@ -7,7 +7,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/kasa">
       <AppRouter />
     </BrowserRouter>
   </React.StrictMode>
