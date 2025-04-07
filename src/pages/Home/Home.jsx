@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Banner from '../../components/Banner/Banner'
 import Card from '../../components/Card/Card'
+import homeBannerImage from '/assets/home-banner.png'
 import './Home.scss'
 
 export default function Home() {
@@ -14,7 +15,10 @@ export default function Home() {
 
   return (
     <div className="home">
-      <Banner />
+      <Banner 
+        image={homeBannerImage}
+        title="Chez vous,<br /> partout et ailleurs"
+      />
       <div className="gallery">
         {logements.map(logement => (
           <Card
