@@ -7,7 +7,7 @@ export default function Header() {
       <div className="header-container">
         <Link to="/" className="logo-link">
           <img 
-            src="./assets/logos/kasa-red.png" 
+            src="/assets/logos/kasa-red.png"
             alt="Kasa - Location d'appartements" 
             className="logo-img"
           />
