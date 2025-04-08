@@ -8,7 +8,7 @@ function Layout() {
     <div className="layout">
       <Header />
       <main className="main-content">
-        <Outlet /> {/* Ceci affichera le contenu des routes enfants */}
+        <Outlet /> 
       </main>
       <Footer />
     </div>

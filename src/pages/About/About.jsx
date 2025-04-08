@@ -15,7 +15,7 @@ const About = () => {
       <div className="collapse-container">
         {aboutData.map((item, index) => (
           <Collapse 
-            key={`collapse-${index}`}  // Clé unique ajoutée ici
+            key={`collapse-${index}`}
             title={item.title}
           >
             {Array.isArray(item.content) ? (
